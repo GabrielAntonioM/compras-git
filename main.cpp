@@ -21,6 +21,7 @@ int main() {
 	cin >> atraso;
 	cout << "A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ";
 	cin >> pagamento;
+	//score compras
 	int scorev;
 	if((compras*vmedio) <= 0.0){
 		scorev = 0;
@@ -34,6 +35,23 @@ int main() {
 	
 	cout << endl << "Score de volume de compras = " << scorev << " pontos" << endl;
 	cout << endl;
+	//scores inadimplencia e pagamento
+	int scorei, scorep;
+	if(atraso > 1 || compras <= 0){
+		scorei = 0;
+	}else if(atraso == 1 && compras > 0){
+		scorei = 15;
+	}else {
+		scorei = 30;
+	}
+	cout << "Score de inadimplencia = " << scorei << " pontos" << endl;
+	
+	if(pagamento == "D"){
+		scorep = 5;
+	}else{
+		scorep = 10;
+	}
+	cout << "Score de forma de pagamento = " << scorep << " pontos" << endl;
 	
 	return 0;
 }
