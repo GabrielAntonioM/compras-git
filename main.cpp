@@ -52,6 +52,18 @@ int main() {
 		scorep = 10;
 	}
 	cout << "Score de forma de pagamento = " << scorep << " pontos" << endl;
+	cout << endl;
+	//classificação
+	int total;
+	total = scorep+scorei+scorev;
+	cout << "Classificação final = CLIENTE ";
+	if(total <= 25){
+		cout << "BRONZE" << endl;
+	}else if(total <= 75){
+		cout << "PRATA" << endl;
+	}else{
+		cout << "OURO" << endl;
+	}
 	
 	return 0;
 }
